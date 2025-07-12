@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="person" class="constructor.Person">
+   <constructor-arg>
+     <value>Shubham</value>
+   </constructor-arg>
+   <constructor-arg>
+     <value>13</value>
+   </constructor-arg>
+   <constructor-arg ref="lapp">
+   </constructor-arg>
+   <constructor-arg>
+    <list>
+    <value>101</value>
+    <value>102</value>
+    <value>103</value>
+    </list>
+   </constructor-arg>
+  </bean>
+  
+  
+  <bean class="constructor.Lap" id="lapp">
+    <constructor-arg>
+   <value>Shubham LAP</value>
+   </constructor-arg>
+  </bean>
+  
+  <bean name="data" class="constructor.Ambiguity">
+   <constructor-arg index="1" type="int">
+   <value>11</value>
+   </constructor-arg>
+   <constructor-arg value="12"></constructor-arg>
+  </bean>
+
+</beans>
