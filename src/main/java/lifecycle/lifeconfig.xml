@@ -5,10 +5,14 @@
   https://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <bean class="lifecycle.Cycle" name="leaf" init-method="init" destroy-method="destroy">
-  <property name="data" value="12">
-
-  </property>
+  <property name="data" value="12"/>
   </bean>
+
+<bean class="lifecycle.Interface" name="interfaces" >
+  <property name="address" value="Kop"/>
+  <property name="id" value="11"/>
+</bean>
+ 
 
 
 </beans>

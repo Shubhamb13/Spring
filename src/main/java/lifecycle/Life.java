@@ -10,5 +10,9 @@ public class Life {
      Cycle c = context.getBean("leaf", Cycle.class);
      System.out.println(c);
      context.registerShutdownHook();
+
+    Interface inter= context.getBean("interfaces",Interface.class);
+    System.out.println(inter);
+
     }
 }
