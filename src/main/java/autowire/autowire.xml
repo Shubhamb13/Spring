@@ -11,18 +11,14 @@
     <!-- Enables @Autowired, @PostConstruct, etc. -->
     <context:annotation-config/>
     
-    <bean class="lifecycle.Cycle" name="leaf" init-method="init" destroy-method="destroy">
-        <property name="data" value="12"/>
+
+    <bean class="autowire.Bottle" name="bottle">
+    <property name="name" value="AQUA"/>
+    <property name="fill" value="FULL"/>
     </bean>
 
-    <bean class="lifecycle.Interface" name="interfaces">
-        <property name="address" value="Kop"/>
-        <property name="id" value="11"/>
-    </bean>
-   
-    <bean class="lifecycle.Dog" name="d1">
-        <property name="food" value="meat"/>
-    </bean>
-
+    <!-- <bean class="autowire.Opener" name="data1" autowire="byName"/> -->
+    <!-- <bean class="autowire.Opener" name="data1" autowire="byType"/> -->
+      <bean class="autowire.Opener" name="data1" autowire="constructor"/>
 
 </beans>

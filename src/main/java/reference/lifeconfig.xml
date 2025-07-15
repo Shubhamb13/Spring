@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
            http://www.springframework.org/schema/beans 
@@ -8,21 +9,20 @@
            http://www.springframework.org/schema/context 
            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Enables @Autowired, @PostConstruct, etc. -->
-    <context:annotation-config/>
-    
-    <bean class="lifecycle.Cycle" name="leaf" init-method="init" destroy-method="destroy">
-        <property name="data" value="12"/>
-    </bean>
+<bean class="reference.Marks" name="m1">
+ <property name="Maths_Marks" value="90"/>
+</bean>
 
-    <bean class="lifecycle.Interface" name="interfaces">
-        <property name="address" value="Kop"/>
-        <property name="id" value="11"/>
-    </bean>
-   
-    <bean class="lifecycle.Dog" name="d1">
-        <property name="food" value="meat"/>
-    </bean>
+<bean class="reference.Student" name="s1" p:Science_Mark="50" p:marks-ref="m1"/>
+
+<!-- <bean class="reference.Student" name="s1">
+<property name="Science_Mark" value="50"/>
+ <property name="marks">
+  <ref bean="m1"/>
+ </property>  -->
+
+ <!-- <property name="marks" ref="m1"/> -->
+<!-- </bean>  -->
 
 
 </beans>
