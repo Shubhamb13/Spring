@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+           <context:annotation-config/>
+
+<bean class="autowire.Annotation.Lap" name="lap1">
+ <property name="Lap_Name" value="MAC BOOK M2"/>
+</bean>
+
+<bean class="autowire.Annotation.Lap" name="lap2">
+ <property name="Lap_Name" value="MAC BOOK M3"/>
+</bean>
+
+   <bean class="autowire.Annotation.Button" name="b1"/>
+</beans>
