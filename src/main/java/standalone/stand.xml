@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util.xsd
+           ">
+
+     <util:list list-class="java.util.LinkedList" id="myfav">
+         <value>Orange</value>
+         <value>Appple</value>
+         <value>Pineapple</value>
+         <value>Banana</value>
+     </util:list>
+
+     <util:set set-class="java.util.HashSet" id="mywater">
+      <value>Bisleri</value>
+      <value>Purifier</value>
+      <value>Aqoua</value>
+      <value>Minral</value>
+     </util:set>
+
+     <util:map map-class="java.util.TreeMap" id="myvalue">
+        <entry key="1" value="java"/>
+        <entry key="2" value="c"/>
+        <entry key="3" value="c++"/>
+     </util:map>
+
+     <util:properties id="myprop">
+       <prop key="database">JSBD</prop>
+       <prop key="url">localhost.3030</prop>
+       <prop key="driver">com.util.java</prop>
+     </util:properties>
+
+
+    <bean class="standalone.First" name="f1" p:properties-ref="myprop" p:courses-ref="myvalue">
+      <property name="fruits">
+      <ref bean="myfav"/>
+      </property>
+      <property name="water" ref="mywater"/>
+      <!-- <property name="courses" ref="myvalue"/> -->
+      <!-- <property name="properties" ref="myprop"/> -->
+    </bean>
+
+</beans>
