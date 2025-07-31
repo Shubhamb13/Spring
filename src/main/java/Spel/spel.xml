@@ -11,15 +11,6 @@
            http://www.springframework.org/schema/util 
            http://www.springframework.org/schema/util/spring-util.xsd">
 
-   <context:component-scan base-package="Stereotype"/>
-
-   <util:list list-class="java.util.ArrayList" id="mybean">
-   <value>JAVA</value>
-   <value>C</value>
-   <value>C++</value>
-   <value>React.js</value>
-   </util:list>
-
-   <bean class="Stereotype.Man" name="ms1" scope="prototype"/>
+   <context:component-scan base-package="Spel"/>
 
 </beans>
