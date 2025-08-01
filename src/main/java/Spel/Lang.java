@@ -9,7 +9,35 @@ public class Lang {
     private int a;
     @Value("#{20+20}")
     private int b;
+ 
+    @Value("#{T(java.lang.Math).sqrt(144)}")
+    private int sum;
+     
+    @Value("#{new java.lang.String('CSK')}")
+    private String team;
 
+    public String getTeam() {
+        return team;
+    }
+    public void setTeam(String team) {
+        this.team = team;
+    }
+    public int getSum() {
+        return sum;
+    }
+    public void setSum(int sum) {
+        this.sum = sum;
+    }
+
+    @Value("#{T(java.lang.Math).PI}")
+    private int sub;
+
+    public int getSub() {
+        return sub;
+    }
+    public void setSub(int sub) {
+        this.sub = sub;
+    }
     public int getB() {
         return b;
     }
@@ -22,9 +50,10 @@ public class Lang {
     public int getA(){
         return a;
     }
+
     @Override
     public String toString() {
         
-        return "A=" + a +" B="+b;
+        return "A=" + a +" B="+b +" SQRRT is= "+sum  +" PI value is= "+sub + "Team is= "+ team;
     }
 }
