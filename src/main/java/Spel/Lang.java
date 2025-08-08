@@ -16,6 +16,15 @@ public class Lang {
     @Value("#{new java.lang.String('CSK')}")
     private String team;
 
+    @Value("#{8>3}")
+    private boolean isTrue;
+
+    public boolean isTrue() {
+        return isTrue;
+    }
+    public void setTrue(boolean isTrue) {
+        this.isTrue = isTrue;
+    }
     public String getTeam() {
         return team;
     }
@@ -54,6 +63,6 @@ public class Lang {
     @Override
     public String toString() {
         
-        return "A=" + a +" B="+b +" SQRRT is= "+sum  +" PI value is= "+sub + "Team is= "+ team;
+        return "A=" + a +" B="+b +" SQRRT is= "+sum  +" PI value is= "+sub + "Team is= "+ team + " ISTrue= " +isTrue;
     }
 }
